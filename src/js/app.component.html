@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="page-header"><h1>Simple CRUD Application</h1></div>
+    <insert-product-component (addProduct)="addNewProduct($event)">
+    </insert-product-component>
+    <div class="row">
+        <div class="col-sm-3">
+            <b>Product Id</b>
+        </div>
+        <div class="col-sm-3">
+            <b>Product Name</b>
+        </div>
+        <div class="col-sm-3">
+            <b>Quantity</b>
+        </div>
+    </div>
+    <product-component *ngFor="let product of products" [product]="product" (productDeleted)="deleteProduct($event)">
+    </product-component>
+</div>

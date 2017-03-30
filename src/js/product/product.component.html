@@ -1,0 +1,17 @@
+<div class="row product-row">
+    <div class="col-sm-3">
+        {{ product.id }}
+    </div>
+    <div class="col-sm-3">
+        {{ product.name }}
+    </div>
+    <div class="col-sm-3">
+        {{ product.quantity }}
+    </div>
+    <div class="col-sm-3">
+        <button *ngIf="!edittingProduct" class="btn btn-warning prod-button" (click)="editProduct()">Edit</button>
+        <button *ngIf="edittingProduct" class="btn btn-info prod-button" (click)="cancelEditProduct()">Close</button>
+        <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+    </div>
+</div>
+<edit-product class="row" *ngIf="edittingProduct" [product]="product"></edit-product>

@@ -1,0 +1,17 @@
+<h3>Insert New Product</h3>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="productName" class="form-control" id="name" name="name"/>
+    </div>
+    <div class="form-group">
+        <label for="qty">Quantity</label>
+        <input type="number" [(ngModel)]="quantity" class="form-control" id="qty" name="quantity" min="1"/>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-info"/>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
+</form>
